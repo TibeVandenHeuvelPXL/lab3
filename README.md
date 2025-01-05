@@ -11,9 +11,6 @@ Mijn 2de VM waarop de virtuele router stond werkte voordat ik aan deze opdracht 
 
 Nadat ik ieder bulletpoint had opgelost, heb ik via show commandos of show run gekeken of hetgene effecties was toegepast. Maar in mijn script had ik eigenlijk ook al vaak commandos erbij gezet om aan te tonen dat het effecties werkt. In de map 'part3' op github heb ik zowel mijn script als mijn output toegevoegd als bewijs dat alle bulletpoints van taak 3 werken.
 ## Part 4: Explore YANG Models
-* Task Preparation and Implementation
-* Task Troubleshooting
-* Task Verification
 ## Part 5: Use NETCONF to Access an IOS XE Device
 * Task Preparation and Implementation
 * Task Troubleshooting
