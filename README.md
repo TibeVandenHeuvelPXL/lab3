@@ -13,8 +13,12 @@ Nadat ik ieder bulletpoint had opgelost, heb ik via show commandos of show run g
 ## Part 4: Explore YANG Models
 ## Part 5: Use NETCONF to Access an IOS XE Device
 * Task Preparation and Implementation
+
+Ik ben stap voor stap doorheen het lab gegaan. Hierbij heb ik gebruik gemaakt van Visual Studio Code en de terminal.
 * Task Troubleshooting
 * Task Verification
+
+Aan de hand van de console messages en xml data die terug kwam kon je weten indien het script goed of fout was. Indien je geen foutmeldingen kreeg wist je dat er geen fouten in het script staan. Ook door show commandos op de router te doen wist je of de configuratie goed was doorgekomen. In de map 'part4' op github heb ik het script staan.
 ## Part 6: Use RESTCONF to Access an IOS XE Device
 * Task Preparation and Implementation
 * Task Troubleshooting
