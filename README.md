@@ -21,8 +21,14 @@ Ik ben stap voor stap doorheen het lab gegaan. Hierbij heb ik gebruik gemaakt va
 Aan de hand van de console messages en xml data die terug kwam kon je weten indien het script goed of fout was. Indien je geen foutmeldingen kreeg wist je dat er geen fouten in het script staan. Ook door show commandos op de router te doen wist je of de configuratie goed was doorgekomen. In de map 'part5' op github heb ik het script staan.
 ## Part 6: Use RESTCONF to Access an IOS XE Device
 * Task Preparation and Implementation
+
+Ik heb ook deze taak gewoon stap voor stap gevolgd. Ik heb gebruik gemaakt van Postman, Visual Studio Code en de terminal.
 * Task Troubleshooting
+
+In restconf-put.py script had ik een fout in de url waardoor ik een 404 error kreeg. Na een aantal keren het script te herlezen zag ik de fout in de url. Daarna kreeg ik de juiste code, namelijk een 201.
 * Task Verification
+
+Aan de hand van de codes die je terugkrijgt weet je direct als het juist of fout is. 200 codes betekent dat het goed is, 400 codes betekent dat het fout is. Ook heb ik op de router de 'show ip interface brief' commando gebruikt om te controleren als de loopback interface effecties was aangemaakt. Ik heb de scripts in de map 'part6' op github staan.
 ## Part 7: Getting started with NETCONF/YANG – Part 1
 * Task Preparation and Implementation
 * Task Troubleshooting
