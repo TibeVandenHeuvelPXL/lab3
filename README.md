@@ -86,5 +86,29 @@ Daarnaast ben ik in de running config gaan kijken op de virtuele router, en hier
 
 ## Part 8: Getting started with NETCONF/YANG – Part 2
 * Task Preparation and Implementation
+
+Als voorbereiding heb ik de informatie gelezen van de documentatie.
+Voor een virtuele environment aan te maken gebruikte ik dit:
+```
+virtualenv v
+. v/bin/activate
+```
+Gebruik van filters:
+```
+./ncc.py --host 192.168.56.101 --username cisco --password cisco123! --get-running --named-filter ietf-intf
+```
+Gebruik van RPC calls:
+```
+./ncc.py --host 192.168.56.101 --username cisco --password cisco123! --get-running
+```
+Configuration changes
+```
+./ncc.py --host 192.168.56.101 --username cisco --password cisco123! --do-edits edit-int-desc --params '{"INTF_NAME": "1", "DESCRIPTION": "New Router Interface2"}'
+
+```
 * Task Troubleshooting
+
+Ik merkte dat pip en virtuelenv niet geinstalleerd waren. Dit heb ik opgelost door ze te installeren met sudo install pip en sudo pip install virtualenv.
 * Task Verification
+
+Ik heb telkens naar de running configuration gekeken of de teruggegeven informatie wel klopte, of als de veranderingen effecties zijn toegepast.
