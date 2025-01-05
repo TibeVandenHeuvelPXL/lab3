@@ -31,8 +31,59 @@ In restconf-put.py script had ik een fout in de url waardoor ik een 404 error kr
 Aan de hand van de codes die je terugkrijgt weet je direct als het juist of fout is. 200 codes betekent dat het goed is, 400 codes betekent dat het fout is. Ook heb ik op de router de 'show ip interface brief' commando gebruikt om te controleren als de loopback interface effecties was aangemaakt. Ik heb de scripts in de map 'part6' op github staan.
 ## Part 7: Getting started with NETCONF/YANG – Part 1
 * Task Preparation and Implementation
+
+Voor ik aan deze taak begon, heb ik de documentatie gelezen. Ik heb RPC calls gedaan, en informatie opgezocht op het internet wanneer ik iets niet snapte. Bij deze taak heb ik alleen de terminal gebruikt. Hieronder is een voorbeeld van een RPC call om de beschrijving van de G1 interface te veranderen.
+1. Connectie met de virtuele router via NETCONF
+
+```
+ssh -s -p 830 username@host netconf
+```
+2. Reageren tegen de <hello> message
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <capabilities>
+    <capability>urn:ietf:params:netconf:base:1.0</capability>
+  </capabilities>
+</hello>]]>]]>
+```
+3. edit-config RPC call
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+        <interface>
+          <GigabitEthernet>
+            <name>1</name>
+            <description>test</description>
+          </GigabitEthernet>
+        </interface>
+      </native>
+    </config>
+  </edit-config>
+</rpc>]]>]]>
+```
+
 * Task Troubleshooting
+
+Eerst wijzigde de beschrijving van G1 niet omdat ik vergeten was te reageren op de <hello> message. Na opzoekingswerk kwam ik hier achter, en daarna lukte het me wel om de beschrijving van G1 te wijzigen.
 * Task Verification
+
+Deze taak kan ik aan de hand van 2 bewijzen tonen dat deze succesvol was. Ten eerste kreeg ik een response terug nadat ik de RPC call deed:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101"><ok/></rpc-reply>]]>]]>
+```
+Daarnaast ben ik in de running config gaan kijken op de virtuele router, en hier was de beschrijving verandert:
+![image](https://github.com/user-attachments/assets/4373bf98-1c9c-479b-9b46-92c08ba4ed8f)
+
 ## Part 8: Getting started with NETCONF/YANG – Part 2
 * Task Preparation and Implementation
 * Task Troubleshooting
